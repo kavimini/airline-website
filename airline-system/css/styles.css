@@ -73,6 +73,26 @@ a {
   color: white;
 }
 
+.navbutton {
+  position: relative;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  border: none;
+  line-height: 20px;
+  padding: 15px 15px;
+}
+
+
+.navbutton:hover {
+  text-decoration: none;
+  color: #23527c;
+  background-color: #eee;
+  display:block;
+  margin-right: 0px;
+
+}
 /*.nav>li {
 }*/
 
@@ -288,7 +308,6 @@ li.active.text-center{
   font-weight: bold;
   margin: 70px 10px 180px 55px;
   float: left;
-  z-index: 10;
 }
  
 #slider #prev, #slider #next {
@@ -377,6 +396,70 @@ li.active.text-center{
   width: 360px;
   margin: 0 auto 15px;
 }
+
+
+.popup{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+hr {
+  width:60%;
+  text-align:left;
+  margin-left:0;
+  border-color:  gray;
+  border-width:1px;
+}
+
+input {
+  height: 30%;
+  width: 35%;
+  flex: 0 0 200px;
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+.flight-content, .checkin-content, .flightsts-content, .flightschedule-content{
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; /* Could be more or less, depending on screen size */
+  z-index: 1;
+}
+
+.checkin-content > p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
 
 
 @media (max-width: 767px) {

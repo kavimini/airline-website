@@ -15,7 +15,8 @@
     <title>Jupiter Airlines</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="script.js"></script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="js/script.js"></script>
   </head>
 <body>
 
@@ -23,14 +24,6 @@
     <nav id="header-nav" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-
-          <!--<div class="align-nav">
-              <img src="images/Cloud Travel.png" alt="Airline Logo">
-          </div>
-          <div class="navbar-brand">
-              <a href="index.html"><h1>Kavisha Airlines</h1></a>
-          </div>-->
-
           <div class="image-txt-container">
             <img src="images/plane.png">
             <a href="index.html"><h1>Jupiter Airlines</h1></a>
@@ -56,17 +49,14 @@
 
     <div id="flight-nav" class = navbar>
       <ul id="nav-list" class="nav navbar-nav">
-        <li class="text-center">
-          <a href="#">
-            <span class="glyphicon glyphicon-plane"></span> Flights</a>
-        </li>
-        <li class="text-center"><a href="#"><span class="glyphicon glyphicon-check"></span>Check In</a></li>
-        <li class="text-center"><a href="#"><span class="glyphicon glyphicon-random"></span> Flight Status</a></li>
-        <li class="text-center"><a href="#"><span class="glyphicon glyphicon-time"></span> Flight Schedule</a></li>
+        <li class="text-center"><button id="button-1" class = "navbutton" onclick="navpopup('flight-page','1')"><span class="glyphicon glyphicon-plane"></span> Flights</button></li>
+        <li class="text-center"><button id="button-2" class = "navbutton" onclick="navpopup('checkin-page','2')"><span class="glyphicon glyphicon-check"></span> Check In</button></li>
+        <li class="text-center"><button id="button-3" class = "navbutton" onclick="navpopup('flightsts-page','3')"><span class="glyphicon glyphicon-random"></span> Flight Status</button></li>
+        <li class="text-center"><button id="button-4" class = "navbutton" onclick="navpopup('flightschedule-page','4')"><span class="glyphicon glyphicon-time"></span> Flight Schedule</button></li>
       </li>
 
-      <div id="popover_content_wrapper" class="tab-content" style="display: none">
-        <div id="login-text">Login</div>
+    <div id="popover_content_wrapper" class="tab-content" style="display: none">
+      <div id="login-text">Login</div>
         <form>
           <label for="email">Email address:</label>
           <input type="email" id="email" name="email">
@@ -75,7 +65,7 @@
           <button id="login-button" type="submit">Login</button>
         </form>
       </div>
-      </ul><!-- #nav-list -->
+      </ul>
     </div>
     
   </header>
@@ -118,6 +108,50 @@
       <a href="index.html"><div id="specials-tile"><span>DISCOVER</span></div></a>
     </div>
   </div><!-- End of #home-tiles -->
+
+  <div id="flight-page" class="popup">
+    <form class="flight-content">
+      <span class="close">&times;</span>
+      <input type="text" id="from" name="from" placeholder="From">
+      <input type="text" id="to" name="to" placeholder="To">
+      <button type="submit" class="btn">Search</button>
+    </form>  
+  </div>
+
+  <div id="checkin-page" class="popup">
+    <form class="checkin-content">
+      <span class="close">&times;</span>
+      <p>Check In</p>
+      <hr>
+      <input type="text" id="breference" name="breference" placeholder="Booking reference">
+      <input type="text" id="fname" name="fname" placeholder="Family name (as in passport)">
+      <button type="submit" class="btn">Check In</button>
+    </form>  
+  </div>  
+
+  <div id="flightsts-page" class="popup">
+    <form class="flightsts-content">
+      <span class="close">&times;</span>
+      <label>Date</label>
+      <input type="date" id="fstatus" name="fstatus">
+      <label>Flight number</label>
+      <input type="text" id="fnumber" name="fnumber">
+      <button type="submit" class="btn">Submit</button>
+    </form>  
+  </div> 
+
+  <div id="flightschedule-page" class="popup">
+    <form class="flightschedule-content">
+      <span class="close">&times;</span>
+      <input type="text" id="from" name="from" placeholder="From">
+      <input type="text" id="to" name="to" placeholder="To"><br><br>
+      <label>Depart Date: </label>
+      <input type="date" id="depart" name="depart">
+      <label>Return Date: </label>
+      <input type="date" id="return" name="return">
+      <button type="submit" class="btn">Search</button>
+    </form>  
+  </div> 
 
   <footer class="panel-footer">
     <div class="container">
